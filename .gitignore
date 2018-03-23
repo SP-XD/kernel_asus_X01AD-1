@@ -10,11 +10,13 @@
 # Normal rules
 #
 .*
+
 *.o
 *.o.*
 *.a
 *.s
 *.ko
+*.lex.c
 *.so
 *.so.dbg
 *.mod.c
@@ -24,6 +26,7 @@
 *.order
 *.elf
 *.bin
+*.tab.[ch]
 *.tar
 *.gz
 *.bz2
