@@ -14,16 +14,18 @@
 #include "msm8953.dtsi"
 #include "sdm632-cpu.dtsi"
 #include "sdm632-regulator.dtsi"
-/* added for ZQL1830-357 adapter_id recognize */
+//huaqin added for ZQL1830-357 by tangqingyong adapter_id recognize at 20180808 start
 #include "pmi632.dtsi"
-/* modify for ili lcm */
+//huaqin added for ZQL1830-357 by tangqingyong adapter_id recognize at 20180808 end
+/* Huaqin modify for ili lcm by zhanghao at 2018/07/20 start*/
 #include "msm8953-pinctrl.dtsi"
 #include "msm8953-mdss-panels.dtsi"
 #include "dsi-panel-ili9881h-720p-video.dtsi"
+/* Huaqin modify for txd lcm by zhanghao at 2018/07/30 start*/
 #include "dsi-panel-inx6301-720p-video.dtsi"
+/* Huaqin modify for txd lcm by zhanghao at 2018/07/30 end*/
 #include "msm8953-camera-sensor-qrd.dtsi"
-/* modify for ili lcm end*/
-
+/* Huaqin modify for ili lcm by zhanghao at 2018/07/20 end*/
 / {
 	model = "Qualcomm Technologies, Inc. SDM632";
 	compatible = "qcom,sdm632";
@@ -34,7 +36,7 @@
 		bootargs = "kpti=0";
 	};
 };
-/* modify for ili lcm */
+
 &mdss_mdp {
 	qcom,mdss-pref-prim-intf = "dsi";
 };
@@ -1154,6 +1156,18 @@
 		};
 	};
 };
+
+/* Huaqin add for zhengwu start */
+&i2c_5 {
+	status = "okay";
+	tfa98xx@34 {
+		compatible = "nxp,tfa98xx";
+		reg = <0x34>;
+		reset-gpio =<&tlmm 94 0>;
+	};
+};
+/* Huaqin add for zhengwu end */
+
 /* huaqin add for bring up ili9881h by liufurong at 20180719 start */
 &i2c_3 {
 	status = "ok";
