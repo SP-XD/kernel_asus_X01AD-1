@@ -683,3 +683,10 @@ CONFIG_CRYPTO_AES_ARM64_CE_BLK=y
 CONFIG_CRYPTO_AES_ARM64_NEON_BLK=y
 CONFIG_CRYPTO_CRC32_ARM64=y
 CONFIG_QMI_ENCDEC=y
+# Huaqin modify for ZQL1830-395 by zhaojunhai1 at 2018/7/17 start
+CONFIG_INPUT_FINGERPRINT=y
+CONFIG_CDFINGER_FP=y
+# Huaqin modify for ZQL1830-395 by zhaojunhai1 at 2018/7/17 end
+# Huaqin modify for ZQL1830-395 by zhaojunhai1 at 2018/7/26 start
+CONFIG_FOCAL_FP=y
+# Huaqin modify for ZQL1830-395 by zhaojunhai1 at 2018/7/26 end
