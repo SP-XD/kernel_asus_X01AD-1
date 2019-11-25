@@ -333,8 +333,8 @@
 			qcom,auto-recharge-soc = <98>;
 			qcom,chg-vadc = <&pmi632_vadc>;
 			qcom,flash-disable-soc = <0>;
-			//qcom,sw-jeita-enable;
-			//qcom,step-charging-enable;
+			qcom,sw-jeita-enable;
+			qcom,step-charging-enable;
 //Huaqin added by tangqingyong for ZQL1830-385 at 20180818 for USB alert start
 			qcom,pm-gpio1-vadc = <&pmi632_vadc>;
 //Huaqin added by tangqingyong for ZQL1830-385 at 20180818 for USB alert end
