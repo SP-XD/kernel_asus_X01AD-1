@@ -1487,7 +1487,7 @@ static int smb5_batt_set_prop(struct power_supply *psy,
 		vote(chg->chg_disable_votable, USER_VOTER, !val->intval, 0);
 		break;
 	case POWER_SUPPLY_PROP_CHARGE_CONTROL_LIMIT:
-		//rc = smblib_set_prop_system_temp_level(chg, val);
+		rc = smblib_set_prop_system_temp_level(chg, val);
 		break;
 	case POWER_SUPPLY_PROP_CAPACITY:
 		rc = smblib_set_prop_batt_capacity(chg, val);
