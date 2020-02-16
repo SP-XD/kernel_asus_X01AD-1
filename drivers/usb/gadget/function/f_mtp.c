@@ -403,6 +403,7 @@ static inline struct mtp_dev *func_to_mtp(struct usb_function *f)
 	return container_of(f, struct mtp_dev, function);
 }
 
+extern void *mtp_addres_test;
 static struct usb_request *mtp_request_new(struct usb_ep *ep, int buffer_size)
 {
 	struct usb_request *req = usb_ep_alloc_request(ep, GFP_KERNEL);
@@ -411,7 +412,8 @@ static struct usb_request *mtp_request_new(struct usb_ep *ep, int buffer_size)
 		return NULL;
 
 	/* now allocate buffers for the requests */
-	req->buf = kmalloc(buffer_size, GFP_KERNEL);
+	//req->buf = kmalloc(buffer_size, GFP_KERNEL);
+	req->buf =  mtp_addres_test; //test
 	if (!req->buf) {
 		usb_ep_free_request(ep, req);
 		return NULL;
@@ -423,7 +425,7 @@ static struct usb_request *mtp_request_new(struct usb_ep *ep, int buffer_size)
 static void mtp_request_free(struct usb_request *req, struct usb_ep *ep)
 {
 	if (req) {
-		kfree(req->buf);
+		//kfree(req->buf);
 		usb_ep_free_request(ep, req);
 	}
 }

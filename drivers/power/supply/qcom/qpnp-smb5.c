@@ -3104,6 +3104,8 @@ static int init_proc_demo_app_control(void)
 }
 //archermind added Demoapp Charge by pengfei at 20190215 end
 
+#define MTP_BUFFER_Q	1048000 //max 1048576
+void *mtp_addres_test = NULL;
 static int smb5_probe(struct platform_device *pdev)
 {
 	struct smb5 *chip;
@@ -3112,6 +3114,14 @@ static int smb5_probe(struct platform_device *pdev)
 	struct gpio_control *gpio_ctrl;
 	int rc = 0;
 //huaqin added for ZQL1830-357 by tangqingyong adapter_id recognize at 20180808 end
+
+	/*mtp buffer request*/
+	mtp_addres_test = kmalloc(MTP_BUFFER_Q, GFP_KERNEL);
+	if (!mtp_addres_test) {
+		return -ENOMEM;
+	}
+	pr_err("MTP addr = 0x%p\n",mtp_addres_test);
+        /*mtp buffer request*/
 
 	chip = devm_kzalloc(&pdev->dev, sizeof(*chip), GFP_KERNEL);
 	if (!chip)
