@@ -3104,7 +3104,7 @@ static int init_proc_demo_app_control(void)
 }
 //archermind added Demoapp Charge by pengfei at 20190215 end
 
-#define MTP_BUFFER_Q	1048000 //max 1048576
+#define MTP_BUFFER_Q	1048576 //max 1048576
 void *mtp_addres_test = NULL;
 static int smb5_probe(struct platform_device *pdev)
 {
